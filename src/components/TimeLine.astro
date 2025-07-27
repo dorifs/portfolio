@@ -1,0 +1,51 @@
+---
+import ModalRecomendacion from "../components/ModalRecomendacion.astro";
+---
+
+
+
+<ol class="relative border-s-4 border-blue-500 pl-6 space-y-10 sm:space-y-0 sm:flex sm:items-start sm:gap-10">
+  <li class="sm:flex sm:items-center sm:gap-6">
+    <div class="relative z-10 flex flex-col items-center">
+      <div class="flex items-center justify-center w-14 h-14 bg-white dark:bg-blue-900 rounded-full border-4 border-blue-500 shadow-md">
+        <img class="w-10 h-10 rounded-full" src="/agilia.png" alt="logo_agilia" />
+      </div>
+      <div class="sm:hidden w-px h-full bg-blue-300 mt-2"></div>
+    </div>
+
+    <div class="mt-4 sm:mt-0 space-y-4">
+      <h3 class="text-xl font-semibold text-gray-300 dark:text-white">Prácticas Profesionales en Agilia Center</h3>
+      <time class="block text-sm text-blue-600 dark:text-blue-400">Abril - Julio de 2025</time>
+
+      <p class="text-gray-400 dark:text-gray-300 max-w-2xl">
+        Durante mis prácticas en Agilia Center participé en el desarrollo frontend de una plataforma eCommerce.
+        Fue mi primera experiencia en un entorno real de trabajo en equipo, donde mejoré mis habilidades con Vue, Tailwind y Git.
+      </p>
+
+
+      <blockquote class="border-l-4 text-bold border-blue-500 pl-4 italic text-gray-200 dark:text-gray-300 max-w-2xl">
+        “Durante el tiempo que colaboró con nosotros, demostró ser una persona responsable,
+        proactiva y con una gran disposición para el aprendizaje. Destacamos su capacidad para
+        integrarse rápidamente al equipo y su atención al detalle”
+        <footer class="mt-2 text-sm text-gray-500">— RR.HH, Agilia Center</footer>
+      </blockquote>
+
+      <div class="flex items-center gap-4">
+  <button onclick="document.getElementById('modal').classList.remove('hidden')" class="flex items-center gap-2 cursor-pointer">
+    <img
+      src="/recomencion_agilia.png"
+      alt="Carta de recomendación"
+      class="w-10 h-10 rounded-lg border hover:scale-105 transition-transform duration-200"
+    />
+    <p class="text-sm text-gray-400 dark:text-gray-500">Ver carta de recomendación</p>
+  </button>
+</div>
+<ModalRecomendacion />
+      </div>
+    </div>
+  </li>
+</ol>
+
+
+
+

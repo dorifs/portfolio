@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CardProject from '../components/CardProject.astro';
+---
+
+<Layout title="projects">
+	<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8">
+
+		<CardProject
+		title="ecommerce GAMEverse"
+		description="Ecommerce realizado con Vue.js, TypeScript, Nuxt3, Tailwind. Bibliotecas usadas Zod y VeeValidate"
+		imgSrc="/public/GAMEverse.png"
+		alt="ecommerce landingpage GAMEverse"
+		buttonLabel="Ver proyecto" 
+		/>
+
+		<CardProject
+		title="Proyecto Social Impulso Familiar"
+		description="Proyecto administración organización social realizado con PHP, JavaScript, CSS y HTML."
+		imgSrc="/public/ImpulsoFamiliar.png"
+		alt="Impulso familiar"
+		buttonLabel="Ver proyecto" 
+		/>
+
+	</section>
+</Layout>

@@ -1,0 +1,49 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  imgSrc: string;
+  alt?: string;
+  link?: string;
+  buttonLabel?: string;
+}
+
+const {
+  title,
+  description,
+  imgSrc,
+  alt = "Card image",
+  link,
+  buttonLabel = "Leer más"
+} = Astro.props;
+---
+
+<div class="max-w-sm bg-gradient-to-br from-sky-100 to-sky-50 dark:from-gray-900 dark:to-slate-800 border border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+  <img
+    src={imgSrc}
+    alt={alt}
+    class="w-full h-52 object-cover rounded-t-xl shadow-sm hover:scale-105 transition-transform duration-300"
+  />
+
+  <div class="p-6 space-y-4">
+    <h3 class="text-xl font-semibold text-gray-900 dark:text-white tracking-wide">{title}</h3>
+
+    <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+      {description}
+    </p>
+
+    {link && (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-sky-600 hover:bg-sky-700 rounded-md transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+      >
+        {buttonLabel}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    )}
+  </div>
+</div>
