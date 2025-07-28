@@ -4,23 +4,40 @@ import CardProject from '../components/CardProject.astro';
 ---
 
 <Layout title="projects">
-	<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8">
+  <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8">
 
-		<CardProject
-		title="ecommerce GAMEverse"
-		description="Ecommerce realizado con Vue.js, TypeScript, Nuxt3, Tailwind. Bibliotecas usadas Zod y VeeValidate"
-		imgSrc="/public/GAMEverse.png"
-		alt="ecommerce landingpage GAMEverse"
-		buttonLabel="Ver proyecto" 
-		/>
+<CardProject
+  title="ecommerce GAMEverse"
+  description="Ecommerce realizado con Vue.js, TypeScript, Nuxt3, Tailwind..."
+  imgSrc="/GAMEverse.png"
+  alt="GAMEverse"
+  buttonLabel="Ir a Github"
+  link="https://github.com/dorifs/ecommerce.git"
+  images={[
+    '/GAMEverse2.png',
+    '/GAMEverse3.png',
+    '/GAMEverse4.png',
+    '/GAMEverse5.png',
+	'/GAMEverse6.png',
+  ]}
+/>
+    <CardProject
+      title="Proyecto Social Impulso Familiar"
+      description="Proyecto administración organización social realizado con PHP, JavaScript, CSS y HTML."
+      imgSrc="/ImpulsoFamiliar.png"
+      alt="Impulso familiar"
+      buttonLabel="Ir a Github"
+      link="https://github.com/dorii/impulso"
+	   images={[
+    '/Impulso1.png',
+    '/Impulso2.png',
+    '/Impulso3.png',
+	'/Impulso5.png',
+	'/Impulso6.png',
+	'/Impulso7.png',
+	'/Impulso8.png',
+  ]}
+    />
 
-		<CardProject
-		title="Proyecto Social Impulso Familiar"
-		description="Proyecto administración organización social realizado con PHP, JavaScript, CSS y HTML."
-		imgSrc="/public/ImpulsoFamiliar.png"
-		alt="Impulso familiar"
-		buttonLabel="Ver proyecto" 
-		/>
-
-	</section>
+  </section>
 </Layout>

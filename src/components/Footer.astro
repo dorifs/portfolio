@@ -1,11 +1,32 @@
-<footer class="w-full bg-gray-900 text-gray-300 py-6 mt-20">
-  <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
-    <p class="text-sm">&copy; 2025 Dori Fernández. Todos los derechos reservados.</p>
+---
+import Github from "./icons/Github.astro";
+import LnkedIn from "./icons/LnkedIn.astro";
+---
+
+<footer class="w-full bg-yellow-900 text-gray-300 py-6">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
     
-    <div class="flex gap-4 mt-4 sm:mt-0">
-      <a href="https://github.com/dorifs" target="_blank" class="hover:text-white transition">GitHub</a>
-      <a href="https://www.linkedin.com/in/maria-dolores-fernández-sánchez-693157333/" target="_blank" class="hover:text-white transition">LinkedIn</a>
-      <a href="mailto:tuemail@example.com" class="hover:text-white transition">Email</a>
+    <div class="flex items-center gap-2 text-sm">
+      <p>&copy; 2025 Dori Fernández</p>
+      <span class="flex items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
+          <path
+            d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+        </svg>
+        <span>Sevilla, España</span>
+      </span>
     </div>
+
+    <div class="flex gap-4">
+      <a href="https://github.com/dorifs" target="_blank" class="hover:text-white transition">
+        <Github />
+      </a>
+      <a href="https://www.linkedin.com/in/maria-dolores-fern%C3%A1ndez-s%C3%A1nchez-693157333/" target="_blank" class="hover:text-white transition">
+        <LnkedIn />
+      </a>
+    </div>
+
   </div>
 </footer>

@@ -1,4 +1,6 @@
 ---
+import Modal from "./Modal.astro";
+
 export interface Props {
   title: string;
   description: string;
@@ -6,6 +8,7 @@ export interface Props {
   alt?: string;
   link?: string;
   buttonLabel?: string;
+  images?: string[];
 }
 
 const {
@@ -14,36 +17,58 @@ const {
   imgSrc,
   alt = "Card image",
   link,
-  buttonLabel = "Leer más"
+  buttonLabel = "Leer más",
+  images = []
 } = Astro.props;
+
+const modalId = `modal-${title.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
-<div class="max-w-sm bg-gradient-to-br from-sky-100 to-sky-50 dark:from-gray-900 dark:to-slate-800 border border-gray-300 dark:border-gray-700 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+<div
+  onclick={`document.getElementById('${modalId}').classList.remove('hidden')`}
+  class="w-full max-w-sm bg-gradient-to-br from-sky-100 to-sky-50 dark:from-gray-900 dark:to-slate-800 border border-transparent dark:border-slate-700 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] cursor-pointer"
+>
   <img
     src={imgSrc}
     alt={alt}
-    class="w-full h-52 object-cover rounded-t-xl shadow-sm hover:scale-105 transition-transform duration-300"
+    class="w-full h-52 object-cover rounded-t-xl shadow-inner border-b border-slate-200 dark:border-slate-700 transition-transform duration-300 hover:scale-105"
   />
 
   <div class="p-6 space-y-4">
     <h3 class="text-xl font-semibold text-gray-900 dark:text-white tracking-wide">{title}</h3>
-
-    <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
-      {description}
-    </p>
+    <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{description}</p>
 
     {link && (
       <a
         href={link}
         target="_blank"
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-sky-600 hover:bg-sky-700 rounded-md transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+        onclick="event.stopPropagation()"
+        class="relative inline-flex items-center gap-2 text-sm font-medium text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 transition duration-300 group"
       >
         {buttonLabel}
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        <svg
+          class="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>
+        <span class="absolute -bottom-0.5 left-0 w-full h-0.5 bg-sky-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
       </a>
     )}
   </div>
 </div>
+
+<Modal
+  id={modalId}
+  title={title}
+  content={description}
+  link={link}
+  buttonLabel={buttonLabel}
+  images={images}
+/>
