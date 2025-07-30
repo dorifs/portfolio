@@ -1,41 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CardProject from '../components/CardProject.astro';
+
+export interface Props {
+  translations: {
+    gameverse: {
+      title: string;
+      description: string;
+      buttonLabel: string;
+    };
+    impulso: {
+      title: string;
+      description: string;
+      buttonLabel: string;
+    };
+  };
+}
+
+const { translations } = Astro.props;
 ---
 
 <Layout title="projects">
   <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 py-8">
 
 <CardProject
-  title="ecommerce GAMEverse"
-  description="Ecommerce realizado con Vue.js, TypeScript, Nuxt3, Tailwind..."
+  title={translations.gameverse.title}
+  description={translations.gameverse.description}
   imgSrc="/GAMEverse.png"
   alt="GAMEverse"
-  buttonLabel="Ir a Github"
+  buttonLabel={translations.gameverse.buttonLabel}
   link="https://github.com/dorifs/ecommerce.git"
   images={[
     '/GAMEverse2.png',
     '/GAMEverse3.png',
     '/GAMEverse4.png',
     '/GAMEverse5.png',
-	'/GAMEverse6.png',
+	  '/GAMEverse6.png',
   ]}
 />
     <CardProject
-      title="Proyecto Social Impulso Familiar"
-      description="Proyecto administración organización social realizado con PHP, JavaScript, CSS y HTML."
+      title={translations.impulso.title}
+      description={translations.impulso.description}
       imgSrc="/ImpulsoFamiliar.png"
       alt="Impulso familiar"
-      buttonLabel="Ir a Github"
-      link="https://github.com/dorii/impulso"
+      buttonLabel={translations.impulso.buttonLabel}
+      link="https://github.com/dorifs/impulsoFamiliar"
 	   images={[
     '/Impulso1.png',
     '/Impulso2.png',
     '/Impulso3.png',
-	'/Impulso5.png',
-	'/Impulso6.png',
-	'/Impulso7.png',
-	'/Impulso8.png',
+    '/Impulso5.png',
+    '/Impulso6.png',
+    '/Impulso7.png',
+    '/Impulso8.png',
   ]}
     />
 
