@@ -22,8 +22,27 @@ const t = useTranslations('en');
         <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-r from-sky-300 to-blue-200 bg-clip-text text-transparent mb-4">
           Dori Fernández
         </h1>
-        <p class="text-xl text-slate-400 max-w-xl mb-6">
-          Junior Web Developer passionate about creating elegant, accessible, and efficient digital experiences.
+        <p class="text-xl text-slate-300 max-w-xl mb-6">
+        <p class="text-gray-200 text-base sm:text-lg">
+            <span class="font-semibold text-white">Junior web developer</span> passionate about building digital experiences that are 
+            <span class="text-blue-300 font-medium">sustainable</span>, 
+            <span class="text-blue-300 font-medium">accessible</span>, and 
+            <span class="text-blue-300 font-medium">efficient</span>.
+          </p>
+
+          <p class="text-gray-400 text-base sm:text-lg mt-4">
+            This portfolio is built with 
+            <span class="text-white font-medium">Astro</span>, 
+            <span class="text-white font-medium">TypeScript</span>, and 
+            <span class="text-white font-medium">Tailwind CSS</span>.
+          </p>
+
+          <p class="text-gray-400 text-base sm:text-lg mt-4">
+            In the <a href="#projects" class="text-blue-300 font-medium">Projects</a> section, you can explore work created with other technologies such as 
+            <span class="text-white font-semibold">Vue</span>, 
+            <span class="text-white font-semibold">Nuxt</span>, 
+            <span class="text-white font-semibold">PHP</span>, and more.
+          </p>
         </p>
         <div class="pt-2 flex justify-center md:justify-start">
           <SocialLinks />
@@ -42,20 +61,13 @@ const t = useTranslations('en');
       <Projects translations={t.projects} />
   </section>
 
-  <section
-    id="experience"
-    class="min-h-screen flex flex-col items-center justify-center py-24 px-6 fade-in-up">
-    <h2 class="text-4xl font-bold text-blue-200 mb-6">Experience</h2>
-    <About 
-      title={t.about.title}
-      date={t.about.date}
-      description={t.about.description}
-      quote={t.about.quote}
-      quoteBy={t.about.quoteBy}
-      viewLetter={t.about.viewLetter}
-    />
-</Layout>
-  </section>
+    <section
+      id="experience"
+      class="min-h-screen flex flex-col items-center justify-center py-24 px-6 fade-in-up">
+      <h2 class="text-4xl font-bold text-blue-200 mb-6">Experiencia</h2>
+        <About experiences={t.about.experiences} />
+    </section>
+
 
   <section
     id="contact"

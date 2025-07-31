@@ -4,10 +4,10 @@ import LnkedIn from "./icons/LnkedIn.astro";
 ---
 
 <footer class="w-full bg-gray-800 text-gray-300 py-6">
-  <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-    
-    <div class="flex items-center gap-2 text-sm">
-      <p>2025- Dori Fernández</p>
+  <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-between gap-6">
+
+    <div class="flex flex-col items-center sm:items-start text-sm gap-2 text-center sm:text-left">
+      <p>2025 - Dori Fernández</p>
       <span class="flex items-center gap-1">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -17,9 +17,22 @@ import LnkedIn from "./icons/LnkedIn.astro";
         </svg>
         <span>Sevilla, Spain</span>
       </span>
+      <span class="text-sm text-sky-300">md.fernandez.sanchez@gmail.com</span>
     </div>
 
-    <div class="flex gap-4">
+    <div class="flex gap-3 justify-center sm:justify-end">
+      <a href="/es" title="Español">
+        <span class="fi fi-es w-5 h-5 sm:w-6 sm:h-6 hover:scale-110 transition-transform cursor-pointer"></span>
+      </a>
+      <a href="/en" title="English">
+        <span class="fi fi-gb w-5 h-5 sm:w-6 sm:h-6 hover:scale-110 transition-transform cursor-pointer"></span>
+      </a>
+      <a href="/de" title="Deutsch">
+        <span class="fi fi-de w-5 h-5 sm:w-6 sm:h-6 hover:scale-110 transition-transform cursor-pointer"></span>
+      </a>
+    </div>
+
+    <div class="flex gap-4 justify-center sm:justify-end">
       <a href="https://github.com/dorifs" target="_blank" class="hover:text-white transition">
         <Github />
       </a>

@@ -1,12 +1,24 @@
 export default {
-    about:{
-        title:"Internship at Agilia Center",
-        date: "April - July 2025",
-        description: "During my internship at Agilia Center, I worked on the frontend development of an eCommerce platform. It was my first experience in a real team environment, where I improved my skills with Vue, Tailwind, and Git.",
-        quote: "While working with us, she showed responsibility, proactivity, and a great willingness to learn. We highlight her ability to integrate quickly into the team and her attention to detail.",
-        quoteBy: "— HR, Agilia Center",
-        viewLetter: "View recommendation letter"
+    about: {
+    experiences: [
+    {
+      title: "Internship at Agilia Center",
+      date: "April - July 2025",
+      description: "During my internship at Agilia Center, I participated in the frontend development of an eCommerce platform. It was my first experience in a real team environment, where I improved my skills with Vue, Tailwind, and Git.",
+      quote: "During her time with us, she proved to be a responsible, proactive person with a strong willingness to learn. We highlight her ability to quickly integrate into the team and her attention to detail.",
+      quoteBy: "HR, Agilia Center",
+      viewLetter: "View recommendation letter"
     },
+    {
+      title: "Social Worker",
+      date: "2017 - 2023",
+      description: "Experience in the social sector as a social worker, where I enhanced my communication, organizational, and planning skills, while also improving my proficiency in the German language.",
+      quote: "",
+      quoteBy: "",
+      viewLetter: ""
+    }
+  ]
+  },
      projects: {
     title: "Projects",
     gameverse: {

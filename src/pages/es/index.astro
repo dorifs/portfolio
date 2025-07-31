@@ -23,8 +23,27 @@ const t = useTranslations('es');
           Dori Fernández
         </h1>
         <p class="text-xl text-slate-400 max-w-xl mb-6">
-          Desarrolladora web junior apasionada por crear experiencias digitales elegantes, accesibles y eficientes.
+          <p class="text-gray-300 text-base sm:text-lg">
+          <span class="font-semibold text-white">Desarrolladora web junior</span> apasionada por crear experiencias digitales 
+          <span class="text-blue-400 font-medium">sostenibles</span>, 
+          <span class="text-blue-400 font-medium">accesibles</span> y 
+          <span class="text-blue-400 font-medium">eficientes</span>.
         </p>
+
+        <p class="text-gray-400 text-base sm:text-lg mt-4">
+          Este portfolio está desarrollado con 
+          <span class="text-white font-medium">Astro</span>, 
+          <span class="text-white font-medium">TypeScript</span> y 
+          <span class="text-white font-medium">Tailwind CSS</span>.
+        </p>
+
+        <p class="text-gray-400 text-base sm:text-lg mt-4">
+          En la sección de <a href="#projects" class="text-blue-400 font-medium">Proyectos</a> puedes explorar trabajos realizados con otras tecnologías como 
+          <span class="text-white font-semibold">Vue</span>, 
+          <span class="text-white font-semibold">Nuxt</span>, 
+          <span class="text-white font-semibold">PHP</span>, y más.
+        </p>
+
         <div class="pt-2 flex justify-center md:justify-start">
           <SocialLinks />
         </div>
@@ -46,15 +65,7 @@ const t = useTranslations('es');
     id="experience"
     class="min-h-screen flex flex-col items-center justify-center py-24 px-6 fade-in-up">
     <h2 class="text-4xl font-bold text-blue-200 mb-6">Experiencia</h2>
-    <About 
-      title={t.about.title}
-      date={t.about.date}
-      description={t.about.description}
-      quote={t.about.quote}
-      quoteBy={t.about.quoteBy}
-      viewLetter={t.about.viewLetter}
-    />
-</Layout>
+       <About experiences={t.about.experiences} />
   </section>
 
   <section

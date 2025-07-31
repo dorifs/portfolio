@@ -22,9 +22,27 @@ const t = useTranslations('de');
         <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-r from-sky-300 to-blue-200 bg-clip-text text-transparent mb-4">
           Dori Fernández
         </h1>
-        <p class="text-xl text-slate-400 max-w-xl mb-6">
-          Webentwicklerin mit Leidenschaft für elegante, zugängliche und effiziente digitale Erlebnisse.
+        <p class="text-gray-300 text-base sm:text-lg">
+          <span class="font-semibold text-white">Junior Webentwicklerin</span> mit Leidenschaft für die Erstellung digitaler Erlebnisse, die 
+          <span class="text-blue-300 font-medium">nachhaltig</span>, 
+          <span class="text-blue-300 font-medium">zugänglich</span> und 
+          <span class="text-blue-300 font-medium">effizient</span> sind.
         </p>
+
+        <p class="text-gray-400 text-base sm:text-lg mt-4">
+          Dieses Portfolio wurde mit 
+          <span class="text-white font-medium">Astro</span>, 
+          <span class="text-white font-medium">TypeScript</span> und 
+          <span class="text-white font-medium">Tailwind CSS</span> erstellt.
+        </p>
+
+        <p class="text-gray-400 text-base sm:text-lg mt-4">
+          Im Abschnitt <a href="#projects" class="text-blue-300 font-medium">Projekte</a> kannst du Arbeiten entdecken, die mit weiteren Technologien wie 
+          <span class="text-white font-semibold">Vue</span>, 
+          <span class="text-white font-semibold">Nuxt</span>, 
+          <span class="text-white font-semibold">PHP</span> und mehr umgesetzt wurden.
+        </p>
+
         <div class="pt-2 flex justify-center md:justify-start">
           <SocialLinks />
         </div>
@@ -45,17 +63,10 @@ const t = useTranslations('de');
   <section
     id="experience"
     class="min-h-screen flex flex-col items-center justify-center py-24 px-6 fade-in-up">
-    <h2 class="text-4xl font-bold text-blue-200 mb-6">{t.about.title}</h2>
-    <About 
-      title={t.about.title}
-      date={t.about.date}
-      description={t.about.description}
-      quote={t.about.quote}
-      quoteBy={t.about.quoteBy}
-      viewLetter={t.about.viewLetter}
-    />
-</Layout>
+    <h2 class="text-4xl font-bold text-blue-200 mb-6">Experiencia</h2>
+       <About experiences={t.about.experiences} />
   </section>
+
 
   <section
     id="contact"

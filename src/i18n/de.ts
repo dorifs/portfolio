@@ -1,17 +1,29 @@
 export default {
-    about:{
-        title:"Praktikum im Agilia Center",
-        date:  "April - Juli 2025",
-        description: "Während meines Praktikums bei Agilia Center habe ich an der Frontend-Entwicklung einer eCommerce-Plattform gearbeitet. Es war meine erste Erfahrung in einer echten Teamumgebung, in der ich meine Fähigkeiten mit Vue, Tailwind und Git verbessern konnte.",
-        quote:"Während ihrer Zusammenarbeit mit uns zeigte sie Verantwortungsbewusstsein, Proaktivität und eine große Lernbereitschaft. Wir heben ihre Fähigkeit hervor, sich schnell in das Team zu integrieren, und ihre Liebe zum Detail",
-        quoteBy: "HR, Agilia Center",
-        viewLetter: "Empfehlungsschreiben anzeigen"
+    about: {
+    experiences:[
+    {
+      title: "Praktikum im Agilia Center",
+      date: "April - Juli 2025",
+      description: "Während meines Praktikums bei Agilia Center war ich an der Frontend-Entwicklung einer E-Commerce-Plattform beteiligt. Es war meine erste Erfahrung in einem realen Teamumfeld, in dem ich meine Kenntnisse in Vue, Tailwind und Git verbessern konnte.",
+      quote: "Während ihrer Zeit bei uns zeigte sie sich als verantwortungsbewusste und proaktive Person mit großer Lernbereitschaft. Besonders hervorzuheben sind ihre schnelle Integration ins Team und ihre ausgeprägte Aufmerksamkeit fürs Detail.",
+      quoteBy: "HR, Agilia Center",
+      viewLetter: "Empfehlungsschreiben anzeigen"
     },
+    {
+      title: "Sozialarbeiterin",
+      date: "2017 - 2023",
+      description: "Tätigkeit im sozialen Bereich als Sozialarbeiterin, wobei ich meine Kommunikations-, Organisations- und Planungsfähigkeiten weiterentwickeln und meine Deutschkenntnisse vertiefen konnte.",
+       quote: "",
+      quoteBy: "",
+      viewLetter: ""
+    }
+  ]
+  },
     projects: {
     title: "Projekte",
     gameverse: {
       title: "GAMEverse E-Commerce",
-      description: "E-Commerce erstellt mit Vue.js, TypeScript, Nuxt3 und Tailwind...",
+      description: "E-Commerce entwickelt mit Vue.js, TypeScript, Nuxt3, Tailwind, Git und MongoDB. Außerdem habe ich Bibliotheken wie Zod und Vee-Validate verwendet.",
       buttonLabel: "Zu Github"
     },
     impulso: {

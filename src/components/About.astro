@@ -1,58 +1,61 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import ModalRecomendacion from './ModalRecomendacion.astro';
-
- export interface Props {
-  title: string;
-  date: string;
-  description: string;
-  quote:string;
-  quoteBy:string;
-  viewLetter:string
+// About.astro
+export interface Props {
+  experiences: {
+    title: string;
+    date: string;
+    description: string;
+    quote?: string;
+    quoteBy?: string;
+    viewLetter?: string;
+  }[];
 }
 
-const { title, date, description, quote, quoteBy,viewLetter } = Astro.props;
+const { experiences } = Astro.props;
+import ModalRecomendacion from './ModalRecomendacion.astro';
 ---
 
-<Layout title="about">
 <section>
-<ol class="relative border-s-4 border-blue-500 pl-6 space-y-10 sm:space-y-0 sm:flex sm:items-start sm:gap-10">
-  <li class="sm:flex sm:items-center sm:gap-6">
-    <div class="relative z-10 flex flex-col items-center">
-      <div class="flex items-center justify-center w-14 h-14 bg-white dark:bg-blue-900 rounded-full border-4 border-blue-500 shadow-md">
-        <img class="w-10 h-10 rounded-full" src="/agilia.png" alt="logo_agilia" />
-      </div>
-      <div class="sm:hidden w-px h-full bg-blue-300 mt-2"></div>
-    </div>
+  <ol class="relative border-s-4 border-blue-500 pl-6 space-y-10">
+    {experiences.map((exp, index) => (
+      <li class="flex flex-col sm:flex-row sm:items-start sm:gap-6">
+        <div class="relative z-10 flex flex-col items-center">
+          <div class="flex items-center justify-center w-14 h-14 bg-white dark:bg-blue-900 rounded-full border-4 border-blue-500 shadow-md">
+            <img class="w-10 h-10 rounded-full" src={index === 0 ? "/agilia.png" : "/logo_hpkj.jpeg"} alt="logo_experience" />
+          </div>
+          <div class="sm:hidden w-px h-full bg-blue-300 mt-2"></div>
+        </div>
 
-    <div class="mt-4 sm:mt-0 space-y-4">
-      <h3 class="text-xl font-semibold text-gray-300 dark:text-white">{title}</h3>
-      <time class="block text-sm text-blue-600 dark:text-blue-400">{date}</time>
+        <div class="mt-4 sm:mt-0 space-y-4">
+          <h3 class="text-xl font-semibold text-gray-300 dark:text-white">{exp.title}</h3>
+          <time class="block text-sm text-blue-600 dark:text-blue-400">{exp.date}</time>
 
-      <p class="text-gray-400 dark:text-gray-300 max-w-2xl">
-        {description}
-      </p>
+          <p class="text-gray-400 dark:text-gray-300 max-w-2xl">
+            {exp.description}
+          </p>
 
+          {exp.quote && (
+            <blockquote class="border-l-4 text-bold border-blue-500 pl-4 italic text-gray-200 dark:text-gray-300 max-w-2xl">
+              {exp.quote}
+              {exp.quoteBy && <footer class="mt-2 text-sm text-gray-500">— {exp.quoteBy}</footer>}
+            </blockquote>
+          )}
 
-      <blockquote class="border-l-4 text-bold border-blue-500 pl-4 italic text-gray-200 dark:text-gray-300 max-w-2xl">
-       {quote}
-        <footer class="mt-2 text-sm text-gray-500">— {quoteBy}</footer>
-      </blockquote>
-
-		<div class="flex items-center gap-4">
-		<button onclick="document.getElementById('modal').classList.remove('hidden')" class="flex items-center gap-2 cursor-pointer">
-		<img
-		src="/recomencion_agilia.png"
-		alt="Carta de recomendación"
-		class="w-10 h-10 rounded-lg border hover:scale-105 transition-transform duration-200"
-		/>
-		<p class="text-sm text-gray-400 dark:text-gray-500">{viewLetter}</p>
-		</button>
-		</div>
-	<ModalRecomendacion />
-    </div>
-    </div>
-  </li>
-</ol>
+          {exp.viewLetter && (
+            <div class="flex items-center gap-4">
+              <button onclick="document.getElementById('modal').classList.remove('hidden')" class="flex items-center gap-2 cursor-pointer">
+                <img
+                  src="/recomencion_agilia.png"
+                  alt="Carta de recomendación"
+                  class="w-10 h-10 rounded-lg border hover:scale-105 transition-transform duration-200"
+                />
+                <p class="text-sm text-gray-400 dark:text-gray-500">{exp.viewLetter}</p>
+              </button>
+              <ModalRecomendacion />
+            </div>
+          )}
+        </div>
+      </li>
+    ))}
+  </ol>
 </section>
-</Layout>
