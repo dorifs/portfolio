@@ -17,6 +17,7 @@ export interface Props {
   };
 }
 
+
 const { translations } = Astro.props;
 ---
 
@@ -31,13 +32,15 @@ const { translations } = Astro.props;
   buttonLabel={translations.gameverse.buttonLabel}
   link="https://github.com/dorifs/ecommerce.git"
   images={[
+    "https://player.vimeo.com/video/1106111889?autoplay=1&muted=1&title=0&byline=0&portrait=0",
     '/GAMEverse2.png',
     '/GAMEverse3.png',
     '/GAMEverse4.png',
     '/GAMEverse5.png',
-	  '/GAMEverse6.png',
+    '/GAMEverse6.png',
   ]}
 />
+
     <CardProject
       title={translations.impulso.title}
       description={translations.impulso.description}
