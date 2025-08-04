@@ -35,8 +35,8 @@ export default {
   },
   contact: {
     message: "Zögere nicht, mir zu schreiben oder mich direkt zu kontaktieren!",
-    email: "📧 E-Mail:+34 623 989 165 / +49 176 47157247",
-    phone: "📞 Telefon: md.fernandez.sanchez@gmail.com"
+    email: "📧 Telefon: +34 623 989 165 / +49 176 47157247",
+    phone: "📞 E-Mail: md.fernandez.sanchez@gmail.com"
   },
   
   nav: {
